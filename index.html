@@ -19,6 +19,7 @@ body{
     line-height:1.6;
 }
 
+/* HERO */
 .hero{
     min-height:100vh;
     display:flex;
@@ -63,6 +64,58 @@ body{
     background:#977647;
 }
 
+/* ===== NEWSLETTER (BREAD FIXED) ===== */
+.newsletter{
+    margin:80px auto;
+    background:white;
+    padding:30px;
+    border-radius:20px;
+    max-width:500px;
+    width:100%;
+    box-shadow:0 10px 30px rgba(0,0,0,0.08);
+    text-align:center;
+}
+
+.newsletter h2{
+    color:#b08d57;
+    margin-bottom:10px;
+}
+
+.newsletter p{
+    margin-bottom:20px;
+    color:#666;
+}
+
+.newsletter input{
+    width:100%;
+    padding:14px;
+    margin-bottom:12px;
+    border:1px solid #ddd;
+    border-radius:10px;
+    font-size:1rem;
+}
+
+.newsletter button{
+    width:100%;
+    padding:14px;
+    border:none;
+    border-radius:10px;
+    background:#b08d57;
+    color:white;
+    font-size:1rem;
+    cursor:pointer;
+}
+
+.newsletter button:hover{
+    background:#977647;
+}
+
+#message{
+    margin-top:15px;
+    color:#4a7c59;
+}
+
+/* FOOTER */
 footer{
     text-align:center;
     padding:30px;
@@ -89,6 +142,21 @@ footer{
     <a class="btn" href="https://wa.me/c/27647574059" target="_blank">
         View Our Catalogue
     </a>
+
+</section>
+
+<!-- ✅ NEWSLETTER SECTION (THIS IS WHAT WAS MISSING) -->
+<section class="newsletter">
+
+    <h2>Join Our Newsletter</h2>
+    <p>Get 20% off your first order + skincare tips straight to your inbox.</p>
+
+    <input type="text" placeholder="Your Name">
+    <input type="email" placeholder="Your Email">
+
+    <button>Sign Up</button>
+
+    <div id="message"></div>
 
 </section>
 
