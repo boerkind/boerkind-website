@@ -64,38 +64,54 @@ body{
     background:#977647;
 }
 
-/* ===== NEWSLETTER (BREAD FIXED) ===== */
-.newsletter{
-    margin:80px auto;
+/* =========================
+   POPUP NEWSLETTER (NEW)
+========================= */
+
+.popup-overlay{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.6);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    z-index:9999;
+}
+
+.popup-box{
     background:white;
     padding:30px;
     border-radius:20px;
-    max-width:500px;
-    width:100%;
-    box-shadow:0 10px 30px rgba(0,0,0,0.08);
+    width:90%;
+    max-width:420px;
     text-align:center;
+    position:relative;
+    box-shadow:0 20px 50px rgba(0,0,0,0.3);
 }
 
-.newsletter h2{
+.popup-box h2{
     color:#b08d57;
     margin-bottom:10px;
 }
 
-.newsletter p{
-    margin-bottom:20px;
+.popup-box p{
     color:#666;
+    margin-bottom:15px;
 }
 
-.newsletter input{
+.popup-box input{
     width:100%;
     padding:14px;
-    margin-bottom:12px;
+    margin-bottom:10px;
     border:1px solid #ddd;
     border-radius:10px;
     font-size:1rem;
 }
 
-.newsletter button{
+.popup-btn{
     width:100%;
     padding:14px;
     border:none;
@@ -106,13 +122,28 @@ body{
     cursor:pointer;
 }
 
-.newsletter button:hover{
+.popup-btn:hover{
     background:#977647;
 }
 
-#message{
-    margin-top:15px;
-    color:#4a7c59;
+.close-btn{
+    position:absolute;
+    top:10px;
+    right:15px;
+    border:none;
+    background:none;
+    font-size:20px;
+    cursor:pointer;
+    color:#333;
+}
+
+.skip{
+    display:block;
+    margin-top:10px;
+    font-size:0.9rem;
+    color:#777;
+    cursor:pointer;
+    text-decoration:none;
 }
 
 /* FOOTER */
@@ -127,6 +158,28 @@ footer{
 
 <body>
 
+<!-- ================= POPUP ================= -->
+<div id="popup" class="popup-overlay">
+
+    <div class="popup-box">
+
+        <button class="close-btn" onclick="closePopup()">✕</button>
+
+        <h2>Join Boerkind</h2>
+        <p>Get 20% off your first order + skincare tips.</p>
+
+        <input type="text" placeholder="Your Name">
+        <input type="email" placeholder="Your Email">
+
+        <button class="popup-btn">Sign Up</button>
+
+        <a class="skip" onclick="closePopup()">No thanks, continue to site</a>
+
+    </div>
+
+</div>
+
+<!-- HERO -->
 <section class="hero">
 
     <h1 class="logo">BOERKIND</h1>
@@ -145,24 +198,16 @@ footer{
 
 </section>
 
-<!-- ✅ NEWSLETTER SECTION (THIS IS WHAT WAS MISSING) -->
-<section class="newsletter">
-
-    <h2>Join Our Newsletter</h2>
-    <p>Get 20% off your first order + skincare tips straight to your inbox.</p>
-
-    <input type="text" placeholder="Your Name">
-    <input type="email" placeholder="Your Email">
-
-    <button>Sign Up</button>
-
-    <div id="message"></div>
-
-</section>
-
 <footer>
     © 2026 Boerkind Skincare. All Rights Reserved.
 </footer>
+
+<!-- JS -->
+<script>
+function closePopup(){
+    document.getElementById("popup").style.display = "none";
+}
+</script>
 
 </body>
 </html>
