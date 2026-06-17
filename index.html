@@ -204,10 +204,24 @@ footer{
 
 <!-- JS -->
 <script>
-function closePopup(){
-    document.getElementById("popup").style.display = "none";
+const scriptURL = "https://script.google.com/macros/s/AKfycbxxcMuy3YElMUE8mrk60kX8TTRcvJpKgEWWLB3rKzJrm_AFVtCBbW0MrzJhQPB8xqZosA/exec";
+
+function submitForm() {
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+
+    fetch(scriptURL, {
+        method: "POST",
+        body: JSON.stringify({
+            name: name,
+            email: email
+        })
+    })
+    .then(() => {
+        alert("Welcome to Boerkind 💛");
+        document.getElementById("popup").style.display = "none";
+    });
 }
 </script>
-
 </body>
 </html>
